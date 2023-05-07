@@ -1,0 +1,23 @@
+.total-expenses-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    width: fit-content;
+    margin: 0 auto;
+    /* Center the container horizontally */
+}
+
+.total-expenses-label {
+    margin-bottom: 10px;
+}
+
+.total-expenses-value {
+    font-size: 32px;
+}
