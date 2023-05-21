@@ -10,30 +10,31 @@
 
 
 </head>
-<img src="{{ asset('/storage/images/1.jpg') }}" class="center-image">
-
 
 <body class="antialiased background-image">
+    <div class="wrapper">
 
-    <div class="stripes"></div>
-    <div class="flex justify-center">
-        <div class="container">
-            <div class="content">
-                <h1>経費計算サイト</h1>
+        <img src="{{ asset('/storage/images/1.jpg') }}" class="center-image">
 
-                <div class="auth-links">
-                    <div class="p-6 text-right">
-                        <a href="welcome" class="login-link">
-                            <div class="text-lg font-bold">一般ユーザー用</div>
-                        </a>
-                        <a href="admin/welcome" class="register-link">
-                            <div class="text-lg font-bold">管理者用</div>
-                        </a>
+        <div class="stripes"></div>
+        <div class="flex justify-center">
+            <div class="container">
+                <div class="content">
+                    <h1>経費計算サイト</h1>
+
+                    <div class="auth-links">
+                        <div class="p-6 text-right">
+                            <a href="welcome" class="login-link">
+                                <div class="text-lg font-bold">一般ユーザー用</div>
+                            </a>
+                            <a href="admin/welcome" class="register-link">
+                                <div class="text-lg font-bold">管理者用</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

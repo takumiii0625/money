@@ -41,7 +41,9 @@
                                 <select name="item_id" id="itemSelect">
                                     <option value="">-- 商品名 --</option>
                                     @foreach($itemsWithoutCost as $item)
-                                    <option value="{{ $item->id }}">{{ $item->item_name }}</option>
+                                    <option value="{{ $item->id }}" {{ old('item_id') == $item->id ? 'selected' : '' }}>
+                                        {{ $item->item_name }}
+                                    </option>
                                     @endforeach
                                 </select>
 
@@ -59,7 +61,7 @@
                             <label class="w-full max-w-3xl mx-auto">
                                 <div>雑費:
                                 </div>
-                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="100" type="number" name="others_cost" />
+                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="100" type="number" name="others_cost" value="{{ old('others_cost') }}" />
                                 @error('others_cost')
                                 <div class="mt-3">
                                     <p class="text-red-500">
@@ -72,7 +74,7 @@
                             <label class="w-full max-w-3xl mx-auto">
                                 <div>送料:</div>
                                 <div class="relative">
-                                    <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 pr-8 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="100" type="number" name="send_cost" />
+                                    <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 pr-8 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="100" type="number" name="send_cost" value="{{ old('send_cost') }}" />
                                 </div>
                                 @error('send_cost')
                                 <div class="mt-3">
@@ -88,7 +90,7 @@
                             <label class="w-full max-w-3xl mx-auto">
                                 <div>原価:
                                 </div>
-                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="100" type="number" name="original_cost" />
+                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="100" type="number" name="original_cost" value="{{ old('original_cost') }}" />
                                 @error('original_cost')
                                 <div class="mt-3">
                                     <p class="text-red-500">
@@ -100,7 +102,7 @@
                             <label class="w-full max-w-3xl mx-auto">
                                 <div>個数:
                                 </div>
-                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="10" type="number" name="number" />
+                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="10" type="number" name="number" value="{{ old('number') }}" />
                                 @error('original_cost')
                                 <div class="mt-3">
                                     <p class="text-red-500">
@@ -292,9 +294,6 @@
                     @endif
                     {{-- 追記ここまで --}}
 
-                    <div class="mt-4">
-                        {{ $costs->links() }}
-                    </div>
 
 
 

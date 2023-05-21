@@ -105,6 +105,9 @@ class AdminCostController extends Controller
         if ($request->deleted === null) {
             $rules = [
                 'others_cost' => 'required|max:100',
+                'send_cost' => 'required|max:100',
+                'original_cost' => 'required|max:100',
+                'number' => 'required|max:100',
             ];
 
             $messages = ['required' => '必須項目です', 'max' => '100文字以下にしてください。'];

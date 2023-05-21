@@ -20,7 +20,18 @@ body {
 }
 
 h1 {
-    margin-bottom: 20px;
+    font-size: 3rem;
+    /* フォントサイズを大きく */
+    font-weight: bold;
+    /* フォントの太さを変更 */
+    color: #000000;
+    /* 色を変更 */
+    text-align: center;
+    /* センター揃え */
+    margin-top: 1rem;
+    /* 上の余白 */
+    margin-bottom: 1rem;
+    /* 下の余白 */
 }
 
 .auth-links {
@@ -70,9 +81,18 @@ h1 {
     font-size: 32px;
 }
 
+
 .center-image {
     display: block;
     max-width: 30%;
     height: auto;
     margin: 0 auto;
+    margin-bottom: 20px;
+    /* 画像の下に余白を追加 */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

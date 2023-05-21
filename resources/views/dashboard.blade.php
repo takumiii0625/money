@@ -43,11 +43,18 @@
     </body>
 
 
+    <img src="{{ asset('/storage/images/3.jpg') }}" class="center-image">
 
 
 
 </x-app-layout>
+<footer class="bg-white-800">
 
+    <div class="py-4 text-center">
+        <p class="text-black text-sm">topページ</p>
+    </div>
+
+</footer>
 <style>
     body {
 
@@ -68,6 +75,21 @@
 
     .content {
         display: inline-block;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        /* フォントサイズを大きく */
+        font-weight: bold;
+        /* フォントの太さを変更 */
+        color: #000000;
+        /* 色を変更 */
+        text-align: center;
+        /* センター揃え */
+        margin-top: 1rem;
+        /* 上の余白 */
+        margin-bottom: 1rem;
+        /* 下の余白 */
     }
 
 
@@ -92,5 +114,14 @@
         color: #fff;
         background-color: #333;
         transition: 0.3s;
+    }
+
+    .center-image {
+        width: 100%;
+        display: block;
+        margin-top: 11rem;
+        /* 上の余白 */
+        margin-bottom: 2rem;
+        /* 下の余白 */
     }
 </style>

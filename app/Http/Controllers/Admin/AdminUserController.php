@@ -138,7 +138,7 @@ class AdminUserController extends Controller
 
 
 
-        Admin::destroy($id);
+        // Admin::destroy($id);
         return redirect('/admin/users');
     }
 }

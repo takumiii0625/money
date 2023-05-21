@@ -48,7 +48,7 @@
                             <label class="w-full max-w-3xl mx-auto">
                                 <div>雑費:
                                 </div>
-                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="int" name="others_cost" value="{{ $cost->others_cost }}" />
+                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="int" name="others_cost" value="{{old('others_cost', $cost->others_cost) }}" />
                                 @error('others_cost')
                                 <div class="mt-3">
                                     <p class="text-red-500">
@@ -61,8 +61,8 @@
                             <label class="w-full max-w-3xl mx-auto">
                                 <div>送料:
                                 </div>
-                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" name="send_cost" value="{{ $cost->send_cost }}" />
-                                @error('others_cost')
+                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" name="send_cost" value="{{old('send_cost', $cost->send_cost )}}" />
+                                @error('send_cost')
                                 <div class="mt-3">
                                     <p class="text-red-500">
                                         {{ $message }}
@@ -74,8 +74,8 @@
                             <label class="w-full max-w-3xl mx-auto">
                                 <div>原価：
                                 </div>
-                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" name="original_cost" value="{{ $cost->original_cost }}" />
-                                @error('others_cost')
+                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" name="original_cost" value="{{ old('original_cost',$cost->original_cost) }}" />
+                                @error('original_cost')
                                 <div class="mt-3">
 
                                     <p class="text-red-500">
@@ -88,8 +88,8 @@
                             <label class="w-full max-w-3xl mx-auto">
                                 <div>個数:
                                 </div>
-                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="number" name="number" value="{{ $cost->number }}" />
-                                @error('original_cost')
+                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="number" name="number" value="{{ old('number',$cost->number )}}" />
+                                @error('number')
                                 <div class="mt-3">
                                     <p class="text-red-500">
                                         {{ $message }}

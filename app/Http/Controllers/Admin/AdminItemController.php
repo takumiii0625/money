@@ -92,7 +92,7 @@ class AdminItemController extends Controller
         //編集するボタンを押したとき
         if ($request->deleted === null) {
             $rules = [
-                'item_name' => 'required|max:100',
+                'item_name' => 'required|max:100', 'seal_price' => 'required|integer',
             ];
 
             $messages = ['required' => '必須項目です', 'max' => '100文字以下にしてください。'];
@@ -106,18 +106,24 @@ class AdminItemController extends Controller
             //モデル->カラム名 = 値 で、データを割り当てる
             $item->item_name = $request->input('item_name');
             $item->seal_price = $request->input('seal_price');
-
             if ($request->hasFile('image')) {
-                $name = $request->file('image')->getClientOriginalName();
-                $request->file('image')->move('storage/images', $name);
-                $item->image = $name;
-            } else {
-                // デフォルトの画像ファイル名を設定
-                $item->image = 'no-image.jpg';
+                $filename = $request->file('image')->store('public/images');
+                $item->image = basename($filename);
             }
+
 
             //データベースに保存
             $item->save();
+
+
+
+
+            $cost = Cost::where('item_id', $id)->first();
+
+            $cost->item_name = $request->input('item_name');
+
+            $cost->save();
+
             return redirect()->route('admin.items.index');
         } else {
             //完了ボタンを押したとき

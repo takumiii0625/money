@@ -43,7 +43,7 @@
                             <label class="w-full max-w-3xl mx-auto">
                                 <div>商品名:
                                 </div>
-                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" name="item_name" value="{{ $item->item_name }}" />
+                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" name="item_name" value="{{ old('item_name', $item->item_name) }}" />
                                 @error('item_name')
                                 <div class="mt-3">
                                     <p class="text-red-500">
@@ -55,7 +55,7 @@
                             <label class="w-full max-w-3xl mx-auto">
                                 <div>販売価格:
                                 </div>
-                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="number" name="seal_price" value="{{ $item->seal_price }}" />
+                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="number" name="seal_price" value="{{old('seal_price', $item->seal_price) }}" />
                                 @error('seal_price')
                                 <div class="mt-3">
                                     <p class="text-red-500">

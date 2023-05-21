@@ -16,7 +16,7 @@ class CostController extends Controller
     public function index()
     {
         $user_id = auth()->id();
-        $costs = Cost::where('deleted', false)->where('user_id', $user_id)->paginate(6);
+        $costs = Cost::where('deleted', false)->where('user_id', $user_id)->get();
         $items = Item::where('deleted', false)->where('user_id', $user_id)->get();
 
 
@@ -46,7 +46,11 @@ class CostController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'item_name' => 'required|max:100',  'others_cost' => 'required|integer', 'send_cost' => 'required|integer', 'original_cost' => 'required|integer',
+            'item_name' => 'required|max:100',
+            'others_cost' => 'required|integer',
+            'send_cost' => 'required|integer',
+            'original_cost' => 'required|integer',
+            'number_cost' => 'required|integer',
         ];
 
         $messages = [
@@ -106,6 +110,10 @@ class CostController extends Controller
         if ($request->deleted === null) {
             $rules = [
                 'others_cost' => 'required|max:100',
+
+                'send_cost' => 'required|integer',
+                'original_cost' => 'required|integer',
+                'number_cost' => 'required|integer',
             ];
 
             $messages = ['required' => '必須項目です', 'max' => '100文字以下にしてください。'];

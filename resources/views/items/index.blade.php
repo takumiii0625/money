@@ -37,14 +37,14 @@
 
                         <div class="flex flex-col items-center">
 
-                            <div>
-                                <label for="image">画像ファイル:</label>
-                                <img id="preview-image" src="{{ asset('storage/images/no-image.jpg') }}" alt="画像プレビュー" width="100" style="display:none;">
-                                <input type="file" name="image" id="image" onchange="previewImage(event)">
-                            </div>
 
-                            <label class="w-full max-w-3xl mx-auto">
-                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="ポケモンカード" type="text" name="item_name" />
+                            <label class="w-full max-w-3xl mx-auto" for="image">画像ファイル：</label>
+                            <img class="w-full max-w-3xl mx-auto" id="preview-image" src="{{ asset('storage/images/no-image.jpg') }}" alt="画像プレビュー" width="50%" style="display:none;">
+                            <input class="w-full max-w-3xl mx-auto" type="file" name="image" id="image" onchange="previewImage(event) ">
+
+
+                            <label class="w-full max-w-3xl mx-auto">商品名：
+                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="ポケモンカード" type="text" name="item_name" value="{{ old('item_name') }}" />
                                 @error('item_name')
                                 <div class="mt-3">
                                     <p class="text-red-500">
@@ -53,8 +53,8 @@
                                 </div>
                                 @enderror
                             </label>
-                            <label class="w-full max-w-3xl mx-auto">
-                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="10000" type="number" name="seal_price" />
+                            <label class="w-full max-w-3xl mx-auto">販売価格：
+                                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="10000" type="number" name="seal_price" value="{{ old('seal_price') }}" />
                                 @error('seal_price')
                                 <div class="mt-3">
                                     <p class="text-red-500">
@@ -95,7 +95,7 @@
                                                 利益率</th>
                                             <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900">
                                                 登録日</th>
-
+                                            <th></th>
                                         </tr>
                                     </thead>
 
