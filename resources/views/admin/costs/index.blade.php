@@ -192,7 +192,7 @@
                                             <td class="px-3 py-4 text-sm text-gray-500">
                                                 <div><!--利益率-->
                                                     @if ($item->item && ($item->others_cost + $item->send_cost + $item->original_cost) > 0)
-                                                    {{ number_format((($item->item->seal_price-($item->others_cost + $item->send_cost + $item->original_cost)) / ($item->item->seal_price)) * 100) }}%
+                                                    {{ round(((($item->item->seal_price-($item->others_cost + $item->send_cost + $item->original_cost)) / ($item->item->seal_price)) * 100), 0) }}%
                                                     @else
                                                     N/A
                                                     @endif

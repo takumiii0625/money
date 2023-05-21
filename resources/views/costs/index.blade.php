@@ -41,7 +41,7 @@
                                 <select name="item_id" id="itemSelect">
                                     <option value="">-- 商品名 --</option>
                                     @foreach($itemsWithoutCost as $item)
-                                    <option value="{{ $item->id }}" {{ old('item_id') == $item->id ? 'selected' : '' }}>
+                                    <option value="{{ $item->id }}">
                                         {{ $item->item_name }}
                                     </option>
                                     @endforeach
@@ -103,7 +103,7 @@
                                 <div>個数:
                                 </div>
                                 <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="10" type="number" name="number" value="{{ old('number') }}" />
-                                @error('original_cost')
+                                @error('number')
                                 <div class="mt-3">
                                     <p class="text-red-500">
                                         {{ $message }}
@@ -237,7 +237,7 @@
                                                 <div><!--    利益率：-->
 
                                                     @if ($item->item && ($item->others_cost + $item->send_cost + $item->original_cost) > 0)
-                                                    {{ number_format((($item->item->seal_price-($item->others_cost + $item->send_cost + $item->original_cost)) / ($item->item->seal_price)) * 100) }}%
+                                                    {{ round(((($item->item->seal_price-($item->others_cost + $item->send_cost + $item->original_cost)) / ($item->item->seal_price)) * 100), 0) }}%
                                                     @else
                                                     N/A
                                                     @endif

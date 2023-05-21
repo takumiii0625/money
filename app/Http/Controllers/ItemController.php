@@ -138,13 +138,6 @@ class ItemController extends Controller
 
 
 
-
-
-
-
-
-
-
             // リダイレクト
             return redirect('/items');
         } else {
@@ -153,9 +146,6 @@ class ItemController extends Controller
 
             //モデル->カラム名 = 値 で、データを割り当てる
             $item->deleted = true; //true:完了、false:未完了
-
-
-
 
 
             //データベースに保存

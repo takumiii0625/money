@@ -47,16 +47,16 @@ class CostController extends Controller
     {
         $rules = [
             'item_name' => 'required|max:100',
-            'others_cost' => 'required|integer',
-            'send_cost' => 'required|integer',
-            'original_cost' => 'required|integer',
-            'number_cost' => 'required|integer',
+            'others_cost' => 'required|max:100',
+            'send_cost' => 'required|max:100',
+            'original_cost' => 'required|max:100',
+            'number' => 'required|max:100',
         ];
 
         $messages = [
             'required' => '必須項目です',
             'max' => '100文字以下にしてください。',
-            'integer' => '整数値で入力してください。',
+
         ];
 
 
@@ -82,7 +82,7 @@ class CostController extends Controller
 
         $cost->save();
 
-        return redirect('/costs');
+        return redirect()->route('costs.index');
     }
 
     /**
@@ -110,10 +110,9 @@ class CostController extends Controller
         if ($request->deleted === null) {
             $rules = [
                 'others_cost' => 'required|max:100',
-
-                'send_cost' => 'required|integer',
-                'original_cost' => 'required|integer',
-                'number_cost' => 'required|integer',
+                'send_cost' => 'required|max:100',
+                'original_cost' => 'required|max:100',
+                'number' => 'required|max:100',
             ];
 
             $messages = ['required' => '必須項目です', 'max' => '100文字以下にしてください。'];
